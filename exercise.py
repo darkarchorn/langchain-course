@@ -19,6 +19,7 @@ Model names should match exactly what's available on console.groq.com
 
 import os
 
+
 # Mock ChatGroq class to simulate the real langchain-groq behavior
 class ChatGroq:
     """Mock ChatGroq class for educational purposes."""
