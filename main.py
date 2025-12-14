@@ -197,14 +197,15 @@ Trong một cuộc phỏng vấn trên 60 Minutes, Elon nói về vụ việc h�
     """
 
     summary_prompt_template = PromptTemplate(
-        input_variables=["information"], template=summary_template
+        input_variables=["information"], #specify the variables in the template string need to be filled with actual values
+        template=summary_template
     )
     llm = ChatOpenAI(
     base_url="http://localhost:1234/v1",
     api_key="lm-studio"
     )
-    chain = summary_prompt_template | llm
-    response = chain.stream(input={"information": information})
+    chain = summary_prompt_template | llm # output of summary_prompt_template is sent or chained to the input of llm
+    response = chain.stream(input={"information": information}) # execute the entire chain: formats the prompt with the input then sends it to the llm
     for chunk in response:
         if chunk.content:
             print(chunk.content, end="", flush=True)
