@@ -5,3 +5,5 @@ langchain-openai
 langchain-tavily
 tavily-python
 python-dotenv
+langchain-classic
+langgraph
