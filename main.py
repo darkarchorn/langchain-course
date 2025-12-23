@@ -11,6 +11,7 @@ from prompt import REACT_PROMPT_WITH_FORMAT_INSTRUCTIONS
 from schema import AgentResponse
 
 tools = [TavilySearch()]
+llm = ChatOpenAI(base_url="localhost:1234/v1", model="model-name", verbose=True)
 react_prompt = hub.pull("hwchase17/react")
 output_parser = PydanticOutputParser(pydantic_object=AgentResponse)
 react_prompt_with_format_instructions = PromptTemplate(
