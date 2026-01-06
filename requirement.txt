@@ -5,3 +5,7 @@ langchain-openai
 langchain-tavily
 tavily-python
 python-dotenv
+fastapi
+redis
+sse-starlette
+requests
